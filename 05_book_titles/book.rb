@@ -1,3 +1,5 @@
 class Book
-# write your code here
+    def title word
+        word = word.capitalize
+    end
 end
