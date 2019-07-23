@@ -1,37 +1,27 @@
-#write your code here
 def echo word
-    "#{word}"
+  word
 end
 
 def shout word
-    "#{word.upcase}"
+  word.upcase
 end
 
 def repeat (word, number=2)
-    "#{(word + " ") * (number - 1) + word}"
+  ([word] * number).to_a.join(' ')
 end
 
 def start_of_word word, place
-    "#{word[0..(place - 1)]}"
+  word[0..(place - 1)]
 end
 
 def first_word string
-    words = string.split
-    "#{words[0]}"
+  string.split.first
 end
 
 def titleize string
-    title = []
-    little_words = ["a", "an", "the", "but", "and", "for", "yet", "in", "from", "to", "over"]
-    words = string.split
-    words.each_with_index do |single, index|
-        if little_words.include?(single) == false || index == 0 || index == -1
-            single = single.capitalize
-        end
-        title.push single
-        end
-    "#{title.join(" ")}"
+  little_words = ["a", "an", "the", "but", "and", "for", "yet", "in", "from", "to", "over"]
+  words = string.capitalize.split
+  words.map.with_index { |word, index|
+    !little_words.include?(word) || index == words.count - 1 ? word.capitalize : word
+  }.join(" ")
 end
-
-#words.map.with_index { |single, i| single = single.capitalize unless (little_words.include?(single) == true and i != 0 and i != -1) }  ??
-
