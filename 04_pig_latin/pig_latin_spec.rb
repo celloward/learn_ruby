@@ -63,6 +63,10 @@ describe "#translate" do
   it "counts q as a consonant when followed by non-u's" do
     expect(translate("qatar")).to eq("atarqay")
   end
+  
+  # it "respects Arabic words" do
+  #   expect(translate("quran")).to eq("uranqay")
+  # end
 
   it "translates many words" do
     s = translate("the quick brown fox")
